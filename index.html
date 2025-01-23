@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+            <h1>My Library</h1>
+            <button id="new-btn">New Book</button>
+        <dialog>
+            <form action="" method="get">
+                <p>
+                    <label for="book-title">Title</label>
+                    <input type="text" id="book-title" required />
+                </p>
+                <p>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" required />
+                </p>
+                <p>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" required />
+                </p>
+                <fieldset>
+                    <legend>Status</legend>
+                    <input type="radio" name="status" id="read" value="Read">
+                    <label for="read">Read</label>
+                    <input type="radio" name="status" id="not-read" value="Not Read">
+                    <label for="not-read">Not read</label>
+    
+                </fieldset>
+                <div class="button-container">
+
+                    <button id="close-btn">Cancel</button>
+                    <button type="submit" id="add-book">Add Book</button>
+                    <button id="clear-btn">Clear</button>
+                </div>
+                
+            </form>
+        </dialog>
+        <table>
+        </table>
+    </div>
+</body>
+</html>
