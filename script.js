@@ -68,7 +68,10 @@ class book{
 
     }
 }
-
+const formValidate = () => {
+    const statusSelected = document.querySelector("input[name=status]:checked");
+    return statusSelected !== null;
+}
 
 const openDialog = document.querySelector("#new-btn");
 const dialog = document.querySelector("dialog");
@@ -90,15 +93,23 @@ closebtn.addEventListener('click',(event)=>{
 });
 
 addBook.addEventListener('click',(event)=>{
-    book.addBookToLibrary();
-    book.showTable();
-    event.preventDefault();
+    if(formValidate()){
+        book.addBookToLibrary();
+        book.showTable();
+        document.querySelector("#error-msg").textContent = "";
+        event.preventDefault();
+
+    }else{
+        event.preventDefault();
+        document.querySelector("#error-msg").textContent = "select one of the options."
+    }
 });
 clearbtn.addEventListener('click',(event)=>{
     document.querySelector("#book-title").value = "";
     document.querySelector("#author").value = "";
     document.querySelector("#pages").value = "";
     document.querySelector("input[name=status]:checked").checked = false;
+    document.querySelector("#error-msg").textContent = "";
 
     event.preventDefault();
 })
